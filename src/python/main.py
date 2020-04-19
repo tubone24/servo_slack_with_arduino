@@ -7,7 +7,7 @@ Usage:
   main.py wipe <delay> <time> [--port <port>] [--baudrate <baudrate>]
 
 Options:
-  move           : move a servo
+  move           : move a servo to specific angle
   <angle>        : the angle to movie a servo
   <delay>        : delay time wiping servo
   <time>         : wipe repeat time

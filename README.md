@@ -26,6 +26,7 @@ $ pip install -r requirements.txt
 
 ## Usage
 
+### CLI
 Enjoy running [Python code](src/python/main.py)!
 
 ```
@@ -37,7 +38,7 @@ Usage:
   main.py wipe <delay> <time> [--port <port>] [--baudrate <baudrate>]
 
 Options:
-  move           : move a servo
+  move           : move a servo to specific angle
   <angle>        : the angle to movie a servo
   <delay>        : delay time wiping servo
   <time>         : wipe repeat time
@@ -47,6 +48,41 @@ Options:
   --port         : port with serial comm
 ```
 
-## demo
+### Rest API
+
+If use it for rest API, run FastAPI server, and call POST API.
+
+```
+make server-run
+```
+
+#### Move specific angle
+
+Set the payload include angle.
+
+```
+curl --location --request POST 'http://YOUR_SERVER_HOST:8000/move' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"angle": 180
+}'
+```
+
+#### Wipe
+
+Set the payload include delay and time.
+
+```
+curl --location --request POST 'http://127.0.0.1:8000/wipe' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"delay": 1,
+	"time": 5
+}'
+```
+
+## Demo
+
+Call Wipe API
 
 ![demo](docs/images/arduino.gif)
