@@ -1,5 +1,7 @@
 # servo_slack_with_arduino
 
+> Move your Arduino's servo from Slack!
+
 ## background
 
 Since it is necessary to freely move the Arduino servo motor with Slash command from Slack, create a command line tool.
